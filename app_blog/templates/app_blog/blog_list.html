@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1><p class="p1">Blog List</p></h1>
+
+    {% if blog_list %}
+    <ul>
+
+      {% for blog in blog_list %}
+      <li>
+        <p class="p1"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a> ({{blog.date_of_publication}}) - <a href="{{ blog.blog_author.get_absolute_url }}">{{ blog.blog_author }}</a></p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+    <p class="p1">There are no books in the library.</p>
+    {% endif %}
+    <p class="p1"><a href="{% url 'blog_create' %}">Blog create</a></p>
+
+{% endblock %}

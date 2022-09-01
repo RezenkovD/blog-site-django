@@ -1,0 +1,11 @@
+secret_key.txt
+# Text backup files
+*.bak
+
+#Database
+*.sqlite3
+
+.idea
+venv
+
+__pycache__
